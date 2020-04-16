@@ -1,21 +1,10 @@
-def dollars_calc(value):
-    print(f'{value // 2} toonies')
-    value = value % 2
-    print(f'{value} loonies')
+Money = int(input("Money="))
 
+toonies = Money // 200
+loonies = Money % 200//100
+Quartars = ( Money - toonies * 200 - loonies * 100 ) // 25
+dimes = ( Money - toonies * 200 - loonies * 100 - Quartars *25 ) //10
+nickes = ( Money-  toonies * 200 - loonies * 100 - Quartars * 25 - dimes * 10 )// 5
+pennies = ( Money - toonies * 200 - loonies * 100 - Quartars * 25 - dimes * 10 - nickes * 5)
 
-def cents_calc(value):
-    print(f'{value // 25} quarters')
-    value = value % 25
-    print(f'{value // 10} dimes')
-    value = value % 10
-    print(f'{value // 5} nickels')
-    value = value % 5
-    print(f'{value} pennies')
-
-
-dollars = int(input('Dollars please >'))
-cents = int(input('Cents please >'))
-
-dollars_calc(dollars)
-cents_calc(cents)
+print ( "tonnies= " , toonies , " loonies = " , loonies , " Quarters =" , Quartars , "dimes = " , dimes , " nickes = " , nickes , " pennies = " , pennies , sep='')
